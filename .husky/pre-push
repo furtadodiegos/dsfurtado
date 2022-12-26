@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx concurrently 'npx git-branch-is -r "^(feature|(hot)?fix)/"' 'npx tsc' --kill-others-on-fail
